@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="wrap">  
+  <!--======= SUB BANNER =========-->
+  <section class="sub-bnr" data-stellar-background-ratio="0.5">
+    <div class="position-center-center">
+      <div class="container">
+        <h4>PAVSHOP blog list</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
+          Sed feugiat, tellus vel tristique posuere, diam</p>
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li class="active">BLOG</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <!-- Content -->
+  <div id="content"> 
+    
+    <!-- Blog List -->
+    <section class="blog-list blog-list-3 padding-top-100 padding-bottom-100">
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+              <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9"> 
+            
+            <!-- Article -->
+            {% for blog in blogs %}
+            <article>
+              <div class="row">
+                <div class="col-sm-5"> 
+                  <!-- Post Img --> 
+                  <img class="img-responsive" src="/static/uploads/{{blog.image}}" alt="" > </div>
+                <div class="col-sm-7"> 
+                  <!-- Tittle -->
+                  <div class="post-tittle left"> <a href="#." class="tittle">{{blog.title}}</a> 
+                    <!-- Post Info --> 
+                    <span><i class="primary-color icon-user"></i> by </span> <span><i class="primary-color icon-calendar"></i> </span> <span><i class="primary-color icon-bubble"></i> 05</span> <span><i class="primary-color icon-tag"></i> {{blog.blogcategories.title}}</span> </div>
+                  <!-- Post Content -->
+                  <div class="text-left">
+                    <p></p>
+                    <a href="{{url_for('blog_detail', id=blog.id)}}" class="red-more">READ MORE</a> </div>
+                </div>
+              </div>
+            </article>
+            {% endfor %}
+            <!-- Pagination -->
+            <ul class="pagination in-center">
+              <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+          </div>
+          
+          <!-- Sider Bar -->
+          <div class="col-md-3"> 
+            
+            <!-- SEARCH -->
+            <div class="search">
+              <input class="form-control" type="search" placeholder="Search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="shop-sidebar"> 
+              
+              <!-- Category -->
+              <h5 class="shop-tittle margin-bottom-30">category</h5>
+              <ul class="shop-cate">
+                <li><a href="#."> Chair <span>24</span></a></li>
+                <li><a href="#."> Bag <span>122</span></a></li>
+                <li><a href="#."> Soffa <span>09</span></a></li>
+                <li><a href="#."> Bed <span>12</span></a></li>
+                <li><a href="#."> Shoes <span>98</span></a></li>
+                <li><a href="#."> Table <span>34</span></a></li>
+                <li><a href="#."> Bedsheets <span>23</span></a></li>
+                <li><a href="#."> Curtains <span>43</span></a></li>
+                <li><a href="#."> TV Cabinets <span>12</span></a></li>
+                <li><a href="#."> Clocks <span>18</span></a></li>
+                <li><a href="#."> Towels <span>25</span></a></li>
+              </ul>
+              
+              <!-- Recent Post -->
+              <h5 class="shop-tittle margin-top-60 margin-bottom-30">recent post</h5>
+              <ul class="papu-post margin-top-20">
+                <li class="media">
+                  <div class="media-left"> <a href="#"> <img class="media-object" src="{{ url_for('static', filename='images/sm-post-1.jpg') }}" alt=""></a> </div>
+                  <div class="media-body"> <a class="media-heading" href="#.">Nullam volutpat dui at 
+                    a consequat enimiquet</a> <span>Posted on Sep 27</span> </div>
+                </li>
+                <li class="media">
+                  <div class="media-left"> <a href="#"> <img class="media-object" src="{{ url_for('static', filename='images/sm-post-2.jpg' ) }}" alt=""></a> </div>
+                  <div class="media-body"> <a class="media-heading" href="#.">Nullam volutpat dui at 
+                    a consequat enimiquet</a> <span>Posted on Sep 27</span> </div>
+                </li>
+                <li class="media">
+                  <div class="media-left"> <a href="#"> <img class="media-object" src="{{ url_for('static', filename='images/sm-post-3.jpg') }}" alt=""></a> </div>
+                  <div class="media-body"> <a class="media-heading" href="#.">Nullam volutpat dui at 
+                    a consequat enimiquet</a> <span>Posted on Sep 27</span> </div>
+                </li>
+              </ul>
+              
+              <!-- TAGS -->
+              <h5 class="shop-tittle margin-top-60 margin-bottom-30">PAUPLAR TAGS</h5>
+              <ul class="shop-tags">
+                <li><a href="#.">Towels</a></li>
+                <li><a href="#.">Chair</a></li>
+                <li><a href="#.">Bedsheets</a></li>
+                <li><a href="#.">Shoe</a></li>
+                <li><a href="#.">Curtains</a></li>
+                <li><a href="#.">Clocks</a></li>
+                <li><a href="#.">TV Cabinets</a></li>
+                <li><a href="#.">Best Seller</a></li>
+                <li><a href="#.">Top Selling</a></li>
+              </ul>
+              
+              <!-- BRAND -->
+              <h5 class="shop-tittle margin-top-60 margin-bottom-30">archives</h5>
+              <ul class="shop-cate">
+                <li><a href="#."> January 2015 </a></li>
+                <li><a href="#."> February 2015 </a></li>
+                <li><a href="#."> March 2015 </a></li>
+                <li><a href="#."> April 2015 </a></li>
+                <li><a href="#."> May 2015 </a></li>
+              </ul>
+              
+              <!-- SIDE BACR BANER -->
+              <div class="side-bnr margin-top-50"> <img class="img-responsive" src="{{ url_for('static', filename='images/sidebar-bnr.jpg' ) }}" alt="">
+                <div class="position-center-center"> <span class="price"><small>$</small>299</span>
+                  <div class="bnr-text">look
+                    hot
+                    with
+                    style</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Culture BLOCK -->
+    
+  </div>
+  {% endblock %}
+  <!--======= FOOTER =========-->

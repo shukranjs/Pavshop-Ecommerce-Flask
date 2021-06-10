@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container w-50">
+    <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{form.full_name.label(class='font-weight-normal')}}
+            {{form.full_name(class='form-control')}}
+        </div>
+        <div class="form-group">
+            {{form.email.label(class='font-weight-normal')}}
+            {{form.email(class='form-control')}}
+            {% if form.email.errors %}
+                {% for error in form.email.errors%}
+                    <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+            {% endif%}
+        </div>
+        <div class="form-group">
+            {{form.parol.label(class='font-weight-normal')}}
+            {{form.parol(class='form-control')}}
+        </div>
+        <div class="form-group">
+            {{form.parol_confirm.label(class='font-weight-normal')}}
+            {{form.parol_confirm(class='form-control')}}
+            {% with errors = form.parol_confirm.errors %}
+                {% for error in errors %}
+                <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+            {% endwith %}
+        </div>
+        <div class="form-group">
+            {{form.bio.label(class='font-weight-normal')}}
+            {{form.bio(class='form-control')}}
+        </div>
+        <div class="form-group">
+            {{form.image.label(class='font-weight-normal')}}
+            {{form.image(class='form-control')}}
+        </div>
+        <div class="form-group">
+            {{form.submit(class='btn btn-info')}}
+        </div>
+       
+    </form>
+</div>
+{% endblock %}
+ 

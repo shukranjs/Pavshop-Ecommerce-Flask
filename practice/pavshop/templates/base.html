@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="M_Adnan">
+<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+
+<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='rs-plugin/css/settings.css') }}" media="screen" />
+
+<!-- Bootstrap Core CSS -->
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ url_for('static', filename='css/ionicons.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+
+<!-- JavaScripts -->
+<script src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
+
+<!-- Online Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!-- Navbar -->
+{% include 'includes/navbar.html' %}
+{% block content %}
+{% endblock %}
+
+<section class="small-about padding-top-150 padding-bottom-150">
+    <div class="container"> 
+      
+      <!-- Main Heading -->
+      <div class="heading text-center">
+        <h4>about PAVSHOP</h4>
+        <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
+          eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
+      </div>
+      
+      <!-- Social Icons -->
+      <ul class="social_icons">
+        <li><a href="#."><i class="icon-social-facebook"></i></a></li>
+        <li><a href="#."><i class="icon-social-twitter"></i></a></li>
+        <li><a href="#."><i class="icon-social-tumblr"></i></a></li>
+        <li><a href="#."><i class="icon-social-youtube"></i></a></li>
+        <li><a href="#."><i class="icon-social-dribbble"></i></a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- News Letter -->
+  <section class="news-letter padding-top-150 padding-bottom-150">
+    <div class="container">
+      <div class="heading light-head text-center margin-bottom-30">
+        <h4>NEWSLETTER</h4>
+        <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
+      <form>
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">SEND ME</button>
+      </form>
+    </div>
+  </section>
+  
+{% include 'includes/footer.html' %}
+<!-- LOADER -->
+<script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/own-menu.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/jquery.lighter.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script> 
+
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  --> 
+<script type="text/javascript" src="{{ url_for('static', filename='rs-plugin/js/jquery.tp.t.min.js') }}"></script> 
+<script type="text/javascript" src="{{ url_for('static', filename='rs-plugin/js/jquery.tp.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

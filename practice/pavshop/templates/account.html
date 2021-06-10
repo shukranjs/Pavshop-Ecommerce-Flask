@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br><br>
+<div class="container w-50" id="collapseOne">
+<form action="" method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{form.title.label(class='font-weight-normal')}}
+        {{form.title(class='form-control')}}
+    </div>
+    <div class="form-group">
+        {{form.short_description.label(class='font-weight-normal')}}
+        {{form.short_description(class='form-control')}}
+    </div>
+    <div class="form-group">
+        {{form.content.label(class='font-weight-normal')}}
+        {{form.content(class='form-control')}}
+    </div>
+    <div class="form-group">
+        {{form.image.label(class='font-weight-normal')}}
+        {{form.image(class='form-control')}}
+    </div>
+    <div class="form-group">
+        {{form.submit(class='btn btn-info')}}
+    </div>
+</form>
+<br><br>
+
+<div class="container w-50" id="collapseOne">
+        {% for post in user_posts %}
+        <div class="form-group">
+            Title: <p>{{ post.title }}</p>
+            Author: <p>{{ post.author }}</p>
+        </div>
+        {% endfor %}
+       
+
+{% endblock %}
